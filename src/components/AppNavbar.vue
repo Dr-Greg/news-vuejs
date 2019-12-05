@@ -9,7 +9,7 @@
           v-for="(lang, index) in langs"
           v-bind:key="index"
           @click="selectedLang = lang"
-        >{{lang}}</b-navbar-item>
+        >{{ lang }}</b-navbar-item>
       </b-navbar-dropdown>
     </template>
 
@@ -27,12 +27,25 @@
 </template>
 
 <script lang="ts">
-import { Component, Vue } from "vue-property-decorator";
+import { Component, Vue } from 'vue-property-decorator';
 
 @Component({})
 export default class AppNavbar extends Vue {
-  langs = ["en", "fr"];
-  selectedLang = "en";
+  // private state = {
+  //   siteLangIsActive: false,
+  // };
+  private langs: [string, string] = ['en', 'fr'];
+  private selectedLang: string = 'en';
+  // private dropdownList: object = {
+  //   siteLang: {
+  //     value: '',
+  //     isActive: false,
+  //   },
+  // };
+
+  // private isActive(dropdown: object) {
+  //   console.log(dropdown);
+  // } :class="isActive(dropdownList.siteLang)"
 }
 </script>
 

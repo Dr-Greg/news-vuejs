@@ -7,19 +7,19 @@
 </template>
 
 <script lang="ts">
-import { Vue, Component } from "vue-property-decorator";
-import AppNavbar from "./components/AppNavbar.vue";
-import AppFooter from "./components/AppFooter.vue";
-import Buefy from "buefy";
-import "buefy/dist/buefy.css";
+import { Vue, Component } from 'vue-property-decorator';
+import AppNavbar from './components/AppNavbar.vue';
+import AppFooter from './components/AppFooter.vue';
+import Buefy from 'buefy';
+import 'buefy/dist/buefy.css';
 
 Vue.use(Buefy);
 
 @Component({
   components: {
     AppNavbar,
-    AppFooter
-  }
+    AppFooter,
+  },
 })
 export default class App extends Vue {}
 </script>

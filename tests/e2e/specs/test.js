@@ -19,7 +19,7 @@ describe('visit signup page', () => {
     cy.visit('/register');
     cy.contains(
       'h2',
-      'Désolé, je sais pas quoi mettre donc ....Haec igitur lex in amicitia sanciatur, ut neque rogemus res turpes nec faciamus rogati. Turpis enim excusatioest et minime accipienda cum in ceteris peccatis.',
+      'Désolé, je sais pas quoi mettre donc ....Haec igitur lex in amicitia sanciatur, ut neque rogemus res turpes nec faciamus rogati. Turpis enim excusatioest et minime accipienda cum in ceteris peccatis.'
     );
   });
 });

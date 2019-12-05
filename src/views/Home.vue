@@ -13,10 +13,10 @@
           <b-navbar-item
             v-for="(country, index) in countries"
             v-bind:key="index"
-            @click="selectedCountry = country"
-          >{{country[1]}}</b-navbar-item>
+            @click="selectNewCountry(country);"
+          >{{ country[1] }}</b-navbar-item>
         </b-navbar-dropdown>
-        <b-button @click="getNews()">Search</b-button>
+        <b-button @click="selectNewCountry(selectedCountry)">Search</b-button>
       </div>
     </section>
     <div class="container box" :v-if="articles">
@@ -28,35 +28,31 @@
 </template>
 
 <script lang="ts">
-import { Vue, Component } from "vue-property-decorator";
-import axios from "axios";
-import Article from "@/components/Article.vue";
+import { Vue, Component } from 'vue-property-decorator';
+
+import Article from '@/components/Article.vue';
+import { mapState, mapGetters } from 'vuex';
 
 @Component({
   components: {
-    Article
-  }
+    Article,
+  },
+  computed: {
+    ...mapState(['articles', 'countries']),
+    ...mapGetters(['articles', 'selectedCountry']),
+  },
+  methods: {
+    selectNewCountry(country: [string, string]): void {
+      this.$store.dispatch('selectNewCountry', country);
+    },
+  },
 })
 export default class Home extends Vue {
-  articles: [] = [];
-  apiKey: string = "1331d44e2a9545019c4835d49151627e";
-
-  countries = [["us", "USA"], ["fr", "France"], ["ru", "Russia"]];
-
-  selectedCountry = ["us", "USA"];
-
-  getNews() {
-    this.articles = [];
-    const url = `https://newsapi.org/v2/top-headlines?country=${this.selectedCountry[0]}&apiKey=${this.apiKey}`;
-
-    axios
-      .get(url)
-      .then(response => (this.articles = response.data.articles))
-      .catch(error => console.log(error));
-  }
-
-  mounted() {
-    this.getNews();
+  private mounted() {
+    this.$store.dispatch(
+      'selectNewCountry',
+      this.$store.getters.selectedCountry
+    );
   }
 }
 </script>
