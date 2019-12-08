@@ -3,15 +3,7 @@
     <div class="hero-body">
       <div class="container has-text-centered">
         <h1 class="title is-spaced">News</h1>
-        <h2 class="subtitle">
-          Désolé, je sais pas quoi mettre donc ....Haec igitur lex in amicitia
-          sanciatur, ut neque rogemus res turpes nec faciamus rogati. Turpis
-          enim excusatioest et minime accipienda cum in ceteris peccatis.
-        </h2>
-        <div class="buttons is-centered">
-          <a class="control button is-primary" href="#">Sign up for free</a>
-          <a class="control button is-light" href="#">Read more</a>
-        </div>
+        <h2 class="subtitle">Create an account to better enjoy our services</h2>
       </div>
     </div>
     <div class="container has-text-centered">
@@ -39,8 +31,7 @@
                   tag="router-link"
                   :to="{ path: '/login' }"
                   class="button is-light"
-                  >Log in</b-navbar-item
-                >
+                >Log in</b-navbar-item>
               </div>
               <div class="control is-expanded">
                 <button class="button is-primary is-fullwidth">Sign up!</button>
@@ -48,7 +39,8 @@
             </div>
             <p>
               By signing in you agree with the
-              <a href>Terms and Conditions</a> and <a href>Privacy Policy</a>.
+              <a href>Terms and Conditions</a> and
+              <a href>Privacy Policy</a>.
             </p>
           </form>
         </div>

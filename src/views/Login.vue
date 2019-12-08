@@ -31,8 +31,7 @@
                   tag="router-link"
                   :to="{ path: '/register' }"
                   class="button is-light"
-                  >Sign up</b-navbar-item
-                >
+                >Sign up</b-navbar-item>
               </div>
             </div>
           </form>

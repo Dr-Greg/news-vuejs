@@ -3,7 +3,7 @@
     <div class="content has-text-centered">
       <p>
         <strong>This app uses</strong>
-        <a href="https://newsapi.org/" target="blanc"> News API</a>
+        <a href="https://newsapi.org/" target="blanc">News API</a>
       </p>
     </div>
   </footer>

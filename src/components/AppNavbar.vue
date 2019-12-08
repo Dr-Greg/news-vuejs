@@ -31,21 +31,8 @@ import { Component, Vue } from 'vue-property-decorator';
 
 @Component({})
 export default class AppNavbar extends Vue {
-  // private state = {
-  //   siteLangIsActive: false,
-  // };
   private langs: [string, string] = ['en', 'fr'];
   private selectedLang: string = 'en';
-  // private dropdownList: object = {
-  //   siteLang: {
-  //     value: '',
-  //     isActive: false,
-  //   },
-  // };
-
-  // private isActive(dropdown: object) {
-  //   console.log(dropdown);
-  // } :class="isActive(dropdownList.siteLang)"
 }
 </script>
 

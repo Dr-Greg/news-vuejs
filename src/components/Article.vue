@@ -15,14 +15,14 @@
           </div>
           <div class="media-content">
             <p class="title is-6">{{ article.author }}</p>
-            <!-- <p class="subtitle is-6">{{articleData.author}}</p> -->
+            <p class="subtitle is-6">{{ article.source.name }}</p>
           </div>
         </div>
 
         <div class="content">
-          {{ article.title }}
+          {{ article.title }}...
           <br />
-          <a :href="article.url" target="blanc">Read</a>
+          <a :href="article.url" target="blanc">Read more</a>
           <br />
           <br />
           <b-button style="margin-right: 10px" @click="readArticle(article.url)">Like</b-button>
@@ -39,12 +39,6 @@ import { Component, Vue } from 'vue-property-decorator';
   props: ['article'],
 })
 export default class Article extends Vue {
-  // private articleData: {} = {};
-
-  // private mounted() {
-  //   this.articleData = this.$props.article;
-  // }
-
   private readArticle(url: string) {
     console.log(url);
   }

@@ -5,12 +5,28 @@ describe('visit homepage', () => {
     cy.visit('/');
     cy.contains('h1', 'Get all the news you are looking for...');
   });
+  it('Contains the footer title', () => {
+    cy.visit('/');
+    cy.get('footer').contains('strong', 'This app uses');
+  });
+  it('Contains the footer link', () => {
+    cy.visit('/');
+    cy.get('footer').contains('a', 'News API');
+  });
 });
 
 describe('visit login page', () => {
   it('Visits the app login url', () => {
     cy.visit('/login');
     cy.contains('h1', 'Welcome back !');
+  });
+  it('Contains the footer title', () => {
+    cy.visit('/login');
+    cy.get('footer').contains('strong', 'This app uses');
+  });
+  it('Contains the footer link', () => {
+    cy.visit('/login');
+    cy.get('footer').contains('a', 'News API');
   });
 });
 
@@ -19,7 +35,15 @@ describe('visit signup page', () => {
     cy.visit('/register');
     cy.contains(
       'h2',
-      'Désolé, je sais pas quoi mettre donc ....Haec igitur lex in amicitia sanciatur, ut neque rogemus res turpes nec faciamus rogati. Turpis enim excusatioest et minime accipienda cum in ceteris peccatis.'
+      'Create an account to better enjoy our services'
     );
+  });
+  it('Contains the footer title', () => {
+    cy.visit('/register');
+    cy.get('footer').contains('strong', 'This app uses');
+  });
+  it('Contains the footer link', () => {
+    cy.visit('/register');
+    cy.get('footer').contains('a', 'News API');
   });
 });

@@ -49,10 +49,9 @@ import { mapState, mapGetters } from 'vuex';
 })
 export default class Home extends Vue {
   private mounted() {
-    this.$store.dispatch(
-      'selectNewCountry',
-      this.$store.getters.selectedCountry
-    );
+    if (this.$store.getters.articles.length <= 0) {
+      this.$store.dispatch('selectNewCountry', this.$store.getters.selectedCountry);
+    }
   }
 }
 </script>

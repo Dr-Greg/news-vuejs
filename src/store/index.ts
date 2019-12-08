@@ -1,6 +1,12 @@
 import Vue from 'vue';
 import Vuex from 'vuex';
+import VuexPersist from 'vuex-persist';
 import axios from 'axios';
+
+const vuexPersist: any = new VuexPersist({
+  key: 'store',
+  storage: window.localStorage,
+});
 
 Vue.use(Vuex);
 
@@ -25,7 +31,10 @@ export default new Vuex.Store({
   mutations: {
     selectNewCountry: (
       state,
-      data: { country: [string, string]; articles: any }
+      data: {
+        country: [string, string],
+        articles: any,
+      },
     ) => {
       state.articles = data.articles;
       state.selectedCountry = data.country;
@@ -45,4 +54,5 @@ export default new Vuex.Store({
     },
   },
   modules: {},
+  plugins: [vuexPersist.plugin],
 });
